@@ -1,8 +1,8 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
-    REPO erikd/libsndfile
-    REF v1.0.30
-    SHA512 2714dfbe923450a1f6f6d2a53ae0e88163170a5e0ce436bee27c1c41fc9b5526d6bc38e58918132248a9044f5b05fa29cd483c06c75ed67e6d83c961e30aaac9
+    REPO libsndfile/libsndfile
+    REF 1.0.31
+    SHA512 5767ced306f2d300aa2014d383c22f3ee9a4fe1ffb2c463405bc26209ede09a9cfb95e1c08256db36e986d2b30151c38dbe635a3cae0b7138d7de485e2084891
     HEAD_REF master
 )
 
@@ -28,7 +28,7 @@ vcpkg_configure_cmake(
         ${FEATURE_OPTIONS}
 )
 
-vcpkg_install_cmake() 
+vcpkg_install_cmake()
 
 if(WIN32 AND (NOT MINGW) AND (NOT CYGWIN))
     set(CONFIG_PATH cmake)
