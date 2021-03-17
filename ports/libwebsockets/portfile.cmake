@@ -3,8 +3,8 @@ vcpkg_fail_port_install(ON_ARCH "arm" ON_TARGET "uwp")
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO warmcat/libwebsockets
-    REF dbc3acd5ebd199a706ba9968f573015aa2fcd161 # v4.1.3
-    SHA512 96d59556b86a321b9e298f88177b4a21a9e304ea5463dccba037be96abaab7d60162b672dc0228a670ea37c54047d14c58d76c11b578fe339ac7a2eb0e1e8871
+    REF 0d6698b2d4a77230e02b2ed0875be35159caed83 # master
+    SHA512 388f2ebe94d22d438335d2c104889102ce4e3c52011c5380fc9825f47f90fbdfa3a0f8f872c29a1f41c156bb81e0f4c9ede6a9231dfcb09f4b65b652179a49a6
     HEAD_REF master
     PATCHES
         CMakeLists.patch
@@ -136,12 +136,10 @@ vcpkg_configure_cmake(
     PREFER_NINJA
     OPTIONS
         -DLWS_WITH_STATIC=${LWS_WITH_STATIC}
-        -DLWS_WITH_SHARED=${LWS_WITH_SHARED}
         -DLWS_WITH_GENCRYPTO=ON
         -DLWS_WITH_TLS=ON
         -DLWS_WITH_BUNDLED_ZLIB=OFF
         -DLWS_WITHOUT_TESTAPPS=ON
-        -DLWS_IPV6=ON
         -DLWS_WITH_HTTP2=ON
         -DLWS_WITH_HTTP_STREAM_COMPRESSION=ON # Since zlib is already a dependency
         -DLWS_WITH_LIBUV=ON

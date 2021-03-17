@@ -2,7 +2,7 @@ diff --git a/CMakeLists.txt b/CMakeLists.txt
 index 1e737e5..75534c1 100644
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
-@@ -422,6 +422,11 @@ set(LWS_LIBMOUNT_LIBRARIES CACHE PATH "Path to the libmount library")
+@@ -422,6 +422,12 @@ set(LWS_LIBMOUNT_LIBRARIES CACHE PATH "Path to the libmount library")
  set(LWS_EXT_PTHREAD_INCLUDE_DIR CACHE PATH "Path to an external pthreads include directory")
  set(LWS_EXT_PTHREAD_LIBRARIES CACHE PATH "Path to an external pthreads library")
  
@@ -10,6 +10,7 @@ index 1e737e5..75534c1 100644
 +    find_package(pthreads_windows REQUIRED)
 +    set(LWS_EXT_PTHREAD_INCLUDE_DIR ${PThreads4W_INCLUDE_DIR})
 +    set(LWS_EXT_PTHREAD_LIBRARIES ${PThreads4W_LIBRARY})
++    set(LWS_MAX_SMP 32)
 +endif()
  
  if (LWS_WITH_HTTP_STREAM_COMPRESSION)
